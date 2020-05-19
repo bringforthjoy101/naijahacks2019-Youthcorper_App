@@ -17,8 +17,8 @@ class LodgeController extends Controller
         $lodges = Lodge::latest()->paginate(5);
   
         // return view('home')->with('lodges', $lodges);
-        return view('/home',compact('lodges'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('singleLodge',compact('lodges'))
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     /**
@@ -28,7 +28,7 @@ class LodgeController extends Controller
      */
     public function create()
     {
-        return view('home');
+        return view('createLodge');
     }
 
     /**
@@ -46,11 +46,12 @@ class LodgeController extends Controller
             'state' => 'required',
             'local_govt' => 'required',
             'address' => 'required',
+            'amenities' => 'required',
         ]);
   
         Lodge::create($request->all());
    
-        return redirect()->route('home')
+        return redirect()->route('/lodge/create')
                         ->with('success','Lodges created successfully.');
     }
 
@@ -62,7 +63,8 @@ class LodgeController extends Controller
      */
     public function show(Lodge $lodge)
     {
-        return view('lodges.show',compact('lodge'));
+        // return view('lodges.show',compact('lodge'));
+        return view('singleLodge');
     }
 
     /**

@@ -36,7 +36,8 @@ class indexController extends Controller
         $lodges = Lodge::latest()->paginate(6);
   
         // return view('home')->with('lodges', $lodges);
-        return view('homepage',compact('lodges'))
+        // return view('homepage',compact('lodges'))
+        return view('index',compact('lodges'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

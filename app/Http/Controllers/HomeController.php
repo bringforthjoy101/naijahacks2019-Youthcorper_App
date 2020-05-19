@@ -29,7 +29,7 @@ class HomeController extends Controller
         $lodges = Lodge::latest()->paginate(6);
   
         // return view('home')->with('lodges', $lodges);
-        return view('home',compact('lodges'))
+        return view('corperProfile',compact('lodges'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -40,6 +40,16 @@ class HomeController extends Controller
   
         // return view('home')->with('lodges', $lodges);
         return view('homepage',compact('lodges'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+    public function lodges()
+    {
+        //return view('home');
+        $lodges = Lodge::latest()->paginate(5);
+  
+        // return view('home')->with('lodges', $lodges);
+        return view('lodges',compact('lodges'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

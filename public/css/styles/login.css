@@ -1,0 +1,121 @@
+
+.global-container{
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f5f5f5;
+}
+
+form{
+	padding-top: 10px;
+	font-size: 14px;
+
+}
+
+.card-title{ font-weight:300; }
+
+
+html,body { 
+	height: 100%; 
+}
+
+.global-container{
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+form{
+	padding-top: 10px;
+	font-size: 14px;
+	
+}
+
+.card-title{ font-weight:300; }
+
+
+
+
+.login-form{ 
+	width:600px;
+	margin:20px;
+}
+
+.sign-up{
+	text-align:center;
+	padding:20px 0 0;
+}
+
+.alert{
+	margin-bottom:-30px;
+	font-size: 13px;
+	margin-top:20px;
+}
+.green{
+    color: #27AE60;
+  
+
+}
+.log{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 45px;
+}
+
+
+.or{
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 23px;
+text-align: center;
+
+color: #BDBDBD;
+}
+
+a:link{
+    text-decoration: none !important;
+    
+    
+}
+.flex{
+    display: flex !important;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.center{
+    justify-content: center;
+}
+.btn{
+    font-size: 12px !important;
+}
+.fb{
+    
+background: #3A5998 !important;
+
+color: white !important;
+}
+.twt{
+    background: #55ACEE !important;
+
+color: white !important;
+}
+.fa-google {
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+.gg{
+    background-color: white !important;
+    color: gray !important;
+     border: 1px solid gray !important;
+}
+
+  

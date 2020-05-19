@@ -1,0 +1,683 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    font-family: 'Muli', sans-serif;
+}
+
+a:hover {
+    text-decoration-line: none;
+}
+
+@mixin maxWidth($arg) {
+    @media screen and (max-width: $arg) {
+        @content;
+    }
+}
+
+@mixin minWidth($arg) {
+    @media screen and (min-width: $arg) {
+        @content;
+    }
+}
+
+@mixin logo {
+
+    display: flex;
+    align-items: center;
+
+    h3 {
+        font-weight: 800;
+        font-size: 1.5rem;
+        line-height: 30px;
+        color: #27AE60;
+    }
+
+    .logo {
+        color: #FFF;
+        background-color: #27AE60;
+        width: 46px;
+        height: 46px;
+        line-height: 46px;
+        border-radius: 50%;
+        text-align: center;
+        margin-right: 15px;
+    }
+}
+
+@mixin heading-text {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 40px;
+    color: #333333;
+}
+
+@mixin width {
+    padding: 0 60px;
+    max-width: 1440px;
+    margin: auto;
+}
+
+@mixin city-tag {
+    position: absolute;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1.125rem;
+    color: #333333;
+    padding: 13px 24px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    left: 33px;
+    bottom: 27px;
+}
+
+// Navigation Styles
+
+header {
+    padding: 21px 0;
+    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.03);
+
+    section {
+        @include width;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include maxWidth(500px) {
+            padding: 0 25px;
+        }
+
+        div,
+        ul {
+            display: flex;
+            align-items: center;
+        }
+
+        div {
+            @include logo;
+        }
+
+        ul {
+            @include maxWidth(1000px) {
+                display: none;
+            }
+
+            li {
+                list-style: none;
+                padding: 0 24px;
+
+                a {
+                    font-size: 18px;
+                    line-height: 23px;
+                    color: #333333;
+
+                    &:hover {
+                        text-decoration: none;
+                        color: #333333;
+                    }
+                }
+            }
+
+            li:nth-child(5) a {
+                display: inline-block;
+                font-weight: 600;
+                padding: 9px 23px;
+                background: #27AE60;
+                border-radius: 5px;
+                color: white;
+            }
+        }
+    }
+}
+
+.banner {
+    @include width;
+    width: 100%;
+    height: 373px;
+}
+.banner2 {
+    @include width;
+    width: 100%;
+    height: 373px;
+}
+
+// Featured Apartment Styles
+
+.featured-apartment {
+    @include width;
+    margin-bottom: 65px;
+
+    @include maxWidth(500px) {
+        padding: 0 25px;
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 40px;
+        color: #333333;
+    }
+
+    .apartment {
+        margin-top: 36px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 30px;
+        margin-bottom: 46px;
+
+        .last {
+            display: none;
+        }
+
+        @include maxWidth(1150px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 30px;
+
+            .last {
+                display: block;
+            }
+        }
+
+        @include maxWidth(770px) {
+            grid-template-columns: 100%;
+            grid-row-gap: 30px;
+        }
+
+        .apartment-wrapper {
+
+            .apartment-img {
+                width: 100%;
+                height: 303px;
+                background: url("../images/apartments/hall.jpg") no-repeat center center;
+                background-size: cover;
+                border-radius: 5px;
+            }
+
+            .ap-img2 {
+                background: url("../images/apartments/living-room.jpg") no-repeat center center;
+                background-size: cover;
+            }
+
+            .ap-img3 {
+                background: url("../images/apartments/modern-minimalist-lounge.jpg") no-repeat center center;
+                background-size: cover;
+            }
+
+            .description-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                padding-top: 23px;
+
+                h3,
+                p,
+                a {
+                    font-weight: 600;
+                }
+
+                .description {
+
+                    a {
+                        font-size: 1.125rem;
+                        line-height: 23px;
+                        color: #4F4F4F;
+
+                        &:hover {
+                            text-decoration-line: underline;
+                        }
+                    }
+
+                    h3 {
+                        margin: 8px 0;
+                        font-size: 1.5rem;
+                        line-height: 30px;
+                        color: #27AE60;
+                    }
+
+                    p {
+                        font-size: 1.125rem;
+                        line-height: 23px;
+                        color: #333333;
+                    }
+                }
+
+                .review {
+
+                    h3 {
+                        font-size: 1.75rem;
+                        line-height: 35px;
+                        color: #333333;
+
+                        i {
+                            color: #F2C94C;
+                            margin-right: 14px;
+                        }
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        line-height: 20px;
+                        color: #4F4F4F;
+                    }
+                }
+            }
+        }
+    }
+
+    .more {
+        font-weight: 600;
+        font-size: 1.5rem;
+        line-height: 30px;
+        text-decoration-line: underline;
+        color: #333333;
+    }
+}
+
+// City Styles
+
+.city-wrapper {
+    @include width;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, minmax(500px, 500px));
+    grid-column-gap: 27px;
+    margin-bottom: 58px;
+
+    @include maxWidth(1150px) {
+        grid-template-columns: 100%;
+        grid-template-rows: 233px;
+        grid-row-gap: 27px;
+    }
+
+    @include maxWidth(500px) {
+        padding: 0 25px;
+    }
+
+    .main-city {
+        position: relative;
+        background: url("../images/cities/new-york.jpg") no-repeat center center;
+        background-size: cover;
+        border-radius: 5px;
+
+        p {
+            @include city-tag;
+        }
+    }
+
+    .sub-cities {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 27px;
+        grid-template-rows: repeat(2, minmax(233px, auto));
+        grid-row-gap: 27px;
+
+        @include maxWidth(770px) {
+            grid-template-columns: 100%;
+            grid-template-rows: repeat(4, minmax(233px, auto));
+            grid-row-gap: 27px;
+        }
+
+        div {
+            position: relative;
+            border-radius: 5px;
+
+            p {
+                @include city-tag;
+            }
+        }
+
+        .city-1 {
+            background: url("../images/cities/hong-kong.jpg") no-repeat center center;
+            background-size: cover;
+        }
+
+        .city-2 {
+            background: url("../images/cities/singapore-river.jpg") no-repeat center center;
+            background-size: cover;
+        }
+
+        .city-3 {
+            background: url("../images/cities/panorama.jpg") no-repeat center center;
+            background-size: cover;
+        }
+
+        .city-4 {
+            background: url("../images/cities/town.jpg") no-repeat center center;
+            background-size: cover;
+        }
+    }
+}
+
+// Other States Styles
+
+.other-states {
+    @include width;
+    margin-bottom: 87px;
+
+    @include maxWidth(500px) {
+        padding: 0 25px;
+    }
+
+    h2 {
+        @include heading-text;
+    }
+
+    div {
+        margin-top: 35px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+
+        @include maxWidth(1150px) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-row-gap: 27px;
+        }
+
+        @include maxWidth(660px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 15px;
+        }
+
+        @include maxWidth(500px) {
+            grid-template-columns: 100%;
+        }
+
+        li {
+            list-style: none;
+            margin-bottom: 17px;
+
+            a {
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 23px;
+                color: #333333;
+            }
+
+            .see-all {
+                color: #27AE60;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// Apartment By Feature Styles
+
+.apartment-by-features {
+    @include width;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 186px;
+    grid-column-gap: 17px;
+    margin-bottom: 87px;
+
+    @include maxWidth(1150px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 27px;
+        grid-template-rows: repeat(2, 186px)
+    }
+
+    @include maxWidth(600px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 186px)
+    }
+
+    @include maxWidth(500px) {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(6, 186px)
+    }
+
+    @include maxWidth(500px) {
+        padding: 0 25px;
+    }
+    
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.08);
+        border-radius: 5px;
+
+        p {
+            font-weight: 600;
+            margin-top: 17px;
+            font-size: 18px;
+            line-height: 23px;
+            color: #333333;
+        }
+    }
+}
+
+
+// Testimony Styles
+
+.testimony-wrapper {
+    text-align: center;
+    background-color: #00bb77;
+    color: white;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23000' fill-opacity='.1' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
+    padding: 90px 0 50px;
+    margin-bottom: 87px;
+
+    h2 {
+        font-weight: bold;
+        font-size: 2rem;
+        line-height: 40px;
+        margin-bottom: 53px;
+    }
+
+    .testimony-text-wrapper {
+        max-width: 697px;
+        margin: auto;
+        margin-bottom: 54px;
+
+        p {
+            font-weight: 500;
+            font-size: 1.125rem;
+            line-height: 23px;
+        }
+
+        h3 {
+            margin-top: 25px;
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+    }
+
+    .carousel-cell {
+        width: 100%;
+        counter-increment: carousel-cell;
+    }
+
+    .carousel-nav .carousel-cell {
+        height: 84px;
+        width: 84px;
+        background: url("https://pbs.twimg.com/profile_images/883458234685587456/KtCFjlD4.jpg") no-repeat center center;
+        background-size: cover;
+        border-radius: 50%;
+        margin-right: 19px;
+
+        @include maxWidth(500px) {
+            display: none;
+        }
+      }
+
+    .carousel-nav .carousel-cell.is-nav-selected {
+        border: 3px solid white;
+      }
+}
+
+// Stay Connected Styles
+
+.stay-connected {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 87px;
+    @include maxWidth(500px) {
+        padding: 0 25px;
+    }
+
+    h2 {
+        max-width: 447px;
+        margin: auto;
+        margin-bottom: 11px;
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 40px;
+    }
+
+    p {
+        font-size: 0.875rem;
+        line-height: 18px;
+    }
+
+    form {
+        margin-top: 44px;
+        display: flex;
+        justify-content: center;
+
+        @include maxWidth(500px) {
+            flex-direction: column;
+
+            input {
+                width: 100% !important;
+                margin-right: 0 !important;
+                margin-bottom: 11px;
+            }
+
+            button{
+                padding: 10px 0 !important;
+            }
+        }
+
+        input {
+            width: 268px;
+            outline: none;
+            border: 1px solid #E0E0E0;
+            border-radius: 5px;
+            padding: 11px 23px;
+            font-size: 14px;
+            line-height: 18px;
+            color: #BDBDBD;
+            margin-right: 11px;
+        }
+
+        button {
+            padding: 0 48px;
+            background: #27AE60;
+            border-radius: 5px;
+            color: #FFF;
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+// Top Footer Styles
+
+.top-footer-wrapper {
+    @include width;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 92px;
+
+    @include maxWidth(1320px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 27px;
+    }
+
+    @include maxWidth(700px) {
+        grid-template-columns:100%;
+        grid-row-gap: 27px;
+    }
+
+    @include maxWidth(500px) {
+        padding: 0 25px;
+    }
+
+    .logo-wrapper {
+        @include logo;
+    }
+
+    h3 {
+        font-weight: bold;
+        font-size: 1.5rem;
+        line-height: 30px;
+        color: #27AE60;
+        margin-bottom: 20px;
+    }
+
+    li {
+        list-style: none;
+        margin-bottom: 5px;
+
+        a {
+            font-size: 1.125rem;
+            line-height: 23px;
+            color: #333333;
+        }
+    }
+
+    .contact-us {
+        p {
+            font-size: 1.125rem;
+            line-height: 23px;
+            color: #333333;
+            margin-bottom: 13px;
+
+            span {
+                font-weight: bold;
+            }
+        }
+
+        a {
+            font-size: 1.125rem;
+            line-height: 23px;
+            color: #27AE60;
+        }
+    }
+}
+
+// Footer Styles
+
+footer {
+    background: #4F4F4F;
+    padding: 28px 0;
+    margin-top: 87px;
+
+    .footer-contents {
+        @include width;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include maxWidth(500px) {
+            padding: 0 25px;
+            flex-direction: column;
+            align-items: flex-start;
+
+            p {
+                margin-bottom: 10px;
+            }
+        }
+
+        p {
+            font-size: 1.125rem;
+            line-height: 23px;
+            color: #BDBDBD;
+        }
+    }
+}

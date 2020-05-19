@@ -54,8 +54,7 @@
                                         name="email"
                                         id="email"
                                         placeholder="Your Email"
-                                        value="{{ old('email') }}" 
-                                        required autocomplete="email"
+                                        value="{{ old('email') }}" required autocomplete="email"
                                     />
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -73,8 +72,7 @@
                                         name="state_code"
                                         id="state_code"
                                         placeholder="Your State Code"
-                                        value="{{ old('state_code') }}" 
-                                        required autocomplete="state_code"
+                                        value="{{ old('state_code') }}"  required autocomplete="state_code"
                                     />
                                     @error('state_code')
                                     <span class="invalid-feedback" role="alert">
@@ -94,8 +92,7 @@
                                         name="call_up"
                                         id="call_up"
                                         placeholder="Your Call Up Number"
-                                        value="{{ old('call_up') }}" 
-                                        required autocomplete="call_up"
+                                        value="{{ old('call_up') }}" required autocomplete="call_up"
                                     />
                                     @error('call_up')
                                     <span class="invalid-feedback" role="alert">
@@ -113,8 +110,7 @@
                                         name="password"
                                         id="pass"
                                         placeholder="Password"
-                                        value="{{ old('password') }}" 
-                                        required autocomplete="new-password"
+                                        value="{{ old('password') }}" required autocomplete="new-password"
                                     />
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
